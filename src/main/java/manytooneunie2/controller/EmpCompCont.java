@@ -72,9 +72,31 @@ public static void main(String[] args) {
 	
 // companyDao.deleteCompanyById(1);
 //	employeeDao.deleteEmployeeById(1);
-	Company company2=new Company();
-	company2.setName("hp");
-	company2.setAddress("mysore");
-	companyDao.updateCompany(1, company2);
+//	Company company2=new Company();
+//	company2.setName("hp");
+//	company2.setAddress("mysore");
+//	companyDao.updateCompany(1, company2);
+    
+    
+    Employee employee=new Employee();
+    employee.setName("pandajag");
+    employee.setAge(30);
+   
+    
+    employeeDao.updateEmployee(3,employee);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 }

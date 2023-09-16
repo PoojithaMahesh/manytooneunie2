@@ -24,11 +24,6 @@ public class EmployeeDao {
 	
 	
 	
-	
-	
-	
-	
-	
 	public void saveMultipleEmployee(List<Employee> list) {
 		EntityManager entityManager=getEntityManager();
 		EntityTransaction entityTransaction=entityManager.getTransaction();
@@ -89,6 +84,53 @@ public class EmployeeDao {
 			System.out.println("id is not present");
 		}
 	}
+	
+
+
+
+	public void updateEmployee(int id, Employee employee) {
+	EntityManager entityManager=getEntityManager();
+	Employee dbEmployee=entityManager.find(Employee.class, id);
+	if(dbEmployee!=null) {
+//		id is present so u can update your data
+		EntityTransaction entityTransaction=entityManager.
+				getTransaction();
+		entityTransaction.begin();
+		employee.setId(id);
+//		employee=id name age
+		employee.setCompany(dbEmployee.getCompany());
+		entityManager.merge(employee);
+		entityTransaction.commit();
+		
+	}else {
+		System.out.println("id is not present");
+	}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
